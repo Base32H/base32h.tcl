@@ -5,8 +5,8 @@ namespace eval base32h {
     namespace ensemble create
 
     variable digits \
-	[list 0oO 1iIl 2 3 4 5sS 6 7 8 9 \
-	     Aa Bb Cc Dd Ee Ff Gg Hh Jj Kk L Mm Nn Pp Qq Rr Tt VvUu Ww Xx Yy Zz]
+	[list 0oO 1iI 2 3 4 5sS 6 7 8 9 \
+	     Aa Bb Cc Dd Ee Ff Gg Hh Jj Kk Ll Mm Nn Pp Qq Rr Tt VvUu Ww Xx Yy Zz]
 
     proc encode {int} {
         baseconv $int decimal base32h
@@ -30,7 +30,7 @@ namespace eval base32h {
 	    [list 0 1 2 3 4 5 6 7 8 9]
 	set hexadecimal \
 	    [list 0 1 2 3 4 5 6 7 8 9 Aa Bb Cc Dd Ee Ff]
-	
+
 	switch $from {
 	    binary      {set from $binary}
 	    octal       {set from $octal}
@@ -75,7 +75,7 @@ namespace eval base32h {
 	while {$inter > 0} {
 	    set rem [expr {$inter % $tobase}]
 	    if {$tobase == 1} {
-		
+
 	    } else {
 		set inter [expr {$inter / $tobase}]
 	    }
